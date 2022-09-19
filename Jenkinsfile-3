@@ -1,0 +1,18 @@
+pipeline {
+  agent any
+  options {
+    skipDefaultCheckout true
+  }
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('Hello') {
+      steps {
+        sh 'cat file.txt'
+      }
+    }
+  }
+}
